@@ -1,9 +1,9 @@
 <div>
-    <h1>
-        Welcome to Department
-    </h1>
+    <h3>
+        Departments
+    </h3>
 
-    <li *ngFor="let dept of departments">
+    <li *ngFor="let dept of departments | async">
         <div>Code: {{dept.deptCode}}</div>
         <div>Name: {{dept.deptName}}</div>
     </li>  

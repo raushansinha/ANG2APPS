@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DepartmentComponent } from '../department/department.component';
+import { DepartmentComponent } from './department-list/department.component';
 import { RouterModule } from '@angular/router';
-import { DepartmentService } from '../services/department.service';
+import { DepartmentService } from './services/department.service';
 
 @NgModule({
   imports: [

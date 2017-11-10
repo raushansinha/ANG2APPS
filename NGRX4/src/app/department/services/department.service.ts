@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Department } from '../department/Models/department';
+import { Department } from '../Models/department';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 

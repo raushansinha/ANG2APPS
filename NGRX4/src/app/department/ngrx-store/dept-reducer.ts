@@ -1,18 +1,17 @@
-import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
+import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store';
 import { Department } from '../Models/department'
 import { GET_DEPT } from './action';
 
-export interface Department {
-    department: Department;
-}
-
-
-export const initialState: Department = {
+export const initialState: Array<Department> = [{
     deptCode: "IT",
     deptName: "Information Technologies"
-};
+}];
 
-export function DeptReducer(state = initialState, action: any): Department {
+export const selectDepartmentFeature = createFeatureSelector<Array<Department>>('departments');
+
+export const selectDepartment = createSelector(selectDepartmentFeature, (state:Array<Department>) => state)
+
+export function DeptReducer(state = initialState, action: any): Array<Department> {
     switch (action.type) {
         case GET_DEPT:
             return Object.assign({}, state, action.payload);
