@@ -10,7 +10,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: '/department'},
-  {path: 'employee', loadChildren: 'app/employee/employee.module#EmployeeModule'}
+  {path: 'employee', loadChildren: 'app/employee/employee.module#EmployeeModule'},
+  {path: 'address', loadChildren: 'app/address/address.module#AddressModule'}
 ];
 
 @NgModule({

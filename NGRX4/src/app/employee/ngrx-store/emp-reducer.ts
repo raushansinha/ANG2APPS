@@ -18,10 +18,6 @@ export function reducer(state: Employee = initialState, action: any): Employee {
   }
 }
 
-export interface State extends fromRoot.IAppState {
-  'employee': Employee
-}
-
 export const getMailBoxState = createFeatureSelector<Employee>('employee');
 
 export const getFolders = createSelector(getMailBoxState,
