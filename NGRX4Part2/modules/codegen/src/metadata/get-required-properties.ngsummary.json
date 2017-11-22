@@ -1,0 +1,1 @@
+{"summaries":[{"symbol":{"__symbol":0,"members":[]},"metadata":{"__symbolic":"function","parameters":["props"],"value":{"__symbolic":"error","message":"Function call not supported","line":12,"character":12}}}],"symbols":[{"__symbol":0,"name":"getRequiredProperties","filePath":"C:/Raushan/ANG2/platform/modules/codegen/src/metadata/get-required-properties.d.ts"}]}

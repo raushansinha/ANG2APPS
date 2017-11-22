@@ -1,0 +1,1 @@
+{"summaries":[{"symbol":{"__symbol":0,"members":[]},"metadata":{"__symbolic":"function","parameters":["action"],"value":{"__symbolic":"error","message":"Function call not supported","line":16,"character":26}}}],"symbols":[{"__symbol":0,"name":"printActionFactoryDeclaration","filePath":"C:/Raushan/ANG2/platform/modules/codegen/src/printers/action-factory-declaration.d.ts"}]}
