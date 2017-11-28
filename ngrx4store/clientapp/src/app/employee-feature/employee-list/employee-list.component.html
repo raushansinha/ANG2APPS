@@ -1,0 +1,10 @@
+<h3>
+  {{title}}
+</h3>
+<ul>
+  <div *ngIf=employees$>
+    <li *ngFor="let emp of employees$ | async">
+      {{emp.id}} - {{emp.name}}
+    </li>
+  </div>
+</ul>

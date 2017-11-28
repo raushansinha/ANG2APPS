@@ -2,7 +2,7 @@ import { CommonModule  } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import { DepartmentsComponent } from './departments/departments.component';
+import { DepartmentListComponent } from './department-list/department-list.component';
 import { DepartmentComponent } from './department/department.component';
 import { DepartmentDetailsComponent } from './department-details/department-details.component';
 import { StoreModule } from '@ngrx/store';
@@ -18,7 +18,7 @@ import { DepartmentListGuard } from './departments-list-guard';
 export const routes: Routes = [
   {
     path: '',
-    component: DepartmentsComponent
+    component: DepartmentListComponent
     //canActivate: [DepartmentListGuard],
   },
   {
@@ -30,14 +30,14 @@ export const routes: Routes = [
 @NgModule({
   declarations: [
     DepartmentComponent,
-    DepartmentsComponent,
+    DepartmentListComponent,
     DepartmentDetailsComponent
   ],
   imports: [
     CommonModule ,
     HttpModule,
     RouterModule.forChild(routes),
-    StoreModule.forFeature('departments', DepartmentReducer),
+    StoreModule.forFeature('departmentList', DepartmentReducer),
     EffectsModule.forFeature([
           DepartmentsEffects
     ]),
@@ -47,4 +47,4 @@ export const routes: Routes = [
   exports: [RouterModule, StoreModule, EffectsModule],
   providers: [DepartmentService, DepartmentListGuard],
 })
-export class DepartmentsModule { }
+export class DepartmentFeatureModule { }

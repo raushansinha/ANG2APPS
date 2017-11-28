@@ -1,26 +1,23 @@
-export type Department = {
-    id: string,
+export class Department {
+    id: string;
     Name: string
+
+    constructor(id: string, Name: string) { }
 };
 
-export type DepartmentDetail = {
-    id: string,
-    description: string,
-    numberOfEmployees: number,
+export class DepartmentDetail {
+    id: string;
+    description: string;
+    numberOfEmployees: number;
     location: string
 };
 
 export interface DeptState {
     departments: Department[];
-    departmentDetails: DepartmentDetail;
-};
+}
 
 export const initialState: DeptState = {
-    departments: [{ "id": "TEST", "Name": "Test Department" }],
-    departmentDetails: {
-        id: "",
-        description: "",
-        numberOfEmployees: 0,
-        location: ""
-    }
+    departments: [
+        new Department('IT','Information Tech')
+    ]
 };

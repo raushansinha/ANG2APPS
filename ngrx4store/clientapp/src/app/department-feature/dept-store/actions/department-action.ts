@@ -1,5 +1,5 @@
 import { RouterAction } from '@ngrx/router-store';
-import { DeptState, Department } from '../../models/models';
+import { Department } from '../../models/models';
 import { Action } from '@ngrx/store';
 
 export const GET_DEPARTMENTS = '[Departments] Get';
@@ -13,7 +13,7 @@ export class GetDepartments implements Action {
 
 export class  GetDepartmentsSuccess implements Action {
     readonly type = GET_DEPARTMENT_SUCCESS;
-    constructor(public departments: Department[]){ }
+    constructor(public payload: Department[]){ }
    
 };
 
@@ -24,12 +24,11 @@ export class GetServerError implements Action {
 
 export class GetDepartmentDetailSuccess implements Action {
     readonly type = 'GET_DEPARTMENT_DETAIL_SUCCESS';
-    constructor(department: Department) { }
+    constructor(payload: Department) { }
 };
 
-export type Action =
-    RouterAction<DeptState>
-    | GetDepartments
+export type DeptAction =
+     GetDepartments
     | GetDepartmentsSuccess
     | GetDepartmentDetailSuccess
     | GetServerError;

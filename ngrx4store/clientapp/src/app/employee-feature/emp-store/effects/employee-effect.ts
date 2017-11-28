@@ -6,14 +6,14 @@ import { Injectable } from "@angular/core";
 import { of } from "rxjs/observable/of";
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/withLatestFrom';
-import { DepartmentService } from '../../services/department-service';
-import { DeptState } from '../../models/models';
-import * as departmentAction from '../actions/department-action';
+import { EmployeeService } from '../../services/employee-service';
+import { EmpState } from '../../models/models';
+import * as employeeAction from '../actions/employee-action';
 
 @Injectable()
-export class DepartmentsEffects {
+export class EmployeeEffects {
 
-  constructor(private actions: Actions, private store: Store<DeptState>, private departmentService: DepartmentService) {
+  constructor(private actions: Actions, private store: Store<EmpState>, private employeeService: EmployeeService) {
   }
 
 
@@ -27,23 +27,23 @@ export class DepartmentsEffects {
   //   return of();
   // });
 
-  @Effect() loadDepartments = this.actions
-    .ofType(departmentAction.GET_DEPARTMENTS)
-    .switchMap(() => this.departmentService.getDetartments()
-      .map(resp => new departmentAction.GetDepartmentsSuccess(resp)));
+  @Effect() loadEmployees = this.actions
+    .ofType(employeeAction.GET_EMPLOYEES)
+    .switchMap(() => this.employeeService.getDetartments()
+      .map(resp => new employeeAction.GetEmployeesSuccess(resp)));
   //.catch(error => new departmentAction.GetServerError(error)));
 
 
-  @Effect() navigateToDepartments = this.handleNavigation('departments', (r: ActivatedRouteSnapshot) => {
-    return this.departmentService.getDetartments()
-      .map(resp => new departmentAction.GetDepartmentsSuccess(resp));
+  @Effect() navigateToEmployees = this.handleNavigation('employees', (r: ActivatedRouteSnapshot) => {
+    return this.employeeService.getDetartments()
+      .map(resp => new employeeAction.GetEmployeesSuccess(resp));
     //.catch(error => new departmentAction.GetServerError(error)));
   });
 
-  @Effect() navigateToDepartment = this.handleNavigation('department/:id', (r: ActivatedRouteSnapshot, state: DeptState) => {
+  @Effect() navigateToEmployee = this.handleNavigation('employee/:id', (r: ActivatedRouteSnapshot, state: EmpState) => {
     const id: string = r.paramMap.get('id');
-    if (!state.departments) {
-      return this.departmentService.getDepartmentDetail(id)
+    if (!state.employees) {
+      return this.employeeService.getEmployeeDetail(id)
       // .map(resp => ({ type: 'GET_DEPARTMENT_DETAIL_SUCCESS', payload: resp }))
       // .catch(error => of({ type: 'SERVER_ERROR', payload: error }));
     } else {
@@ -52,7 +52,7 @@ export class DepartmentsEffects {
   });
 
 
-  private handleNavigation(segment: string, callback: (a: ActivatedRouteSnapshot, state: DeptState) => Observable<any>) {
+  private handleNavigation(segment: string, callback: (a: ActivatedRouteSnapshot, state: EmpState) => Observable<any>) {
     const nav = this.actions.ofType(ROUTER_NAVIGATION)
       .map(firstSegment)
       .filter(s => s.routeConfig.path === segment);

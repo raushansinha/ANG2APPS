@@ -13,8 +13,6 @@ export class DepartmentListGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     this.store.dispatch(new GetDepartments());
-
     return true;
-
   }
 }
