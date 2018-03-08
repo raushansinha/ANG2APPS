@@ -1,0 +1,9 @@
+<h1>{{ message }}</h1>
+
+<div *ngIf="loadNew" >
+    <new-module-component></new-module-component>
+</div>
+
+<div *ngIf="!loadNew" >
+    <old-module-component></old-module-component>
+</div>
