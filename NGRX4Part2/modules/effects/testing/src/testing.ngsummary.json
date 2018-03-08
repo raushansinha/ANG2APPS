@@ -1,0 +1,1 @@
+{"summaries":[{"symbol":{"__symbol":0,"members":[]},"metadata":{"__symbolic":"function","parameters":["factoryOrSource"],"value":{"__symbolic":"error","message":"Function call not supported","line":12,"character":16}}}],"symbols":[{"__symbol":0,"name":"provideMockActions","filePath":"C:/Raushan/ANG2/platform/modules/effects/testing/src/testing.d.ts"}]}
